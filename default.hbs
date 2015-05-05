@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    {{! Document Settings }}
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    {{! Page Meta }}
+    <title>{{meta_title}}</title>
+    <meta name="description" content="{{meta_description}}" />
+
+    <meta name="HandheldFriendly" content="True" />
+
+    <link rel="shortcut icon" href="{{asset "favicon.ico"}}">
+
+    {{! Styles'n'Scripts }}
+    <link href="{{asset "css/bootstrap.min.css"}}" rel="stylesheet" />
+    <link href="{{asset "css/screen.css"}}" rel="stylesheet" />
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesnt work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script type="text/javascript" src="{{asset "js/html5shiv.min.js"}}"></script>
+      <script type="text/javascript" src="{{asset "js/respond.min.js"}}"></script>
+    <![endif]-->
+
+
+    {{! Ghost outputs important style and meta data with this tag }}
+    {{ghost_head}}
+</head>
+<body class="{{body_class}}">
+
+    {{navigation}}
+
+    {{! Everything else gets inserted here }}
+    {{{body}}}
+
+    <footer class="footer clearfix">
+        <section class="copyright"><a href="{{@blog.url}}">{{@blog.title}}</a> &copy; {{date format="YYYY"}}</section>
+        <section class="poweredby">Proudly published with <a href="https://ghost.org">Ghost</a> &amp; Theme with <a href="#">MeCasa</a></section>
+        {{! Ghost outputs important scripts and data with this tag }}
+        <section class="others">{{ghost_foot jquery=false}}</section>
+    </footer>
+
+
+    {{! The main JavaScript file for Casper }}
+    <script type="text/javascript" src="{{asset "js/jquery.min.js"}}"></script>
+    <script type="text/javascript" src="{{asset "js/bootstrap.min.js"}}"></script>
+
+</body>
+</html>
